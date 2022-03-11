@@ -18,16 +18,19 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
-        tools: phpcs, phpstan, phpunit
+        tools: phpcs, phpstan
 
     - name: Validate composer.json
       run: composer validate
 
-    - name: Check code style
-      run: phpcs
+    - name: Install dependencies
+      run: composer install
+
+    - name: Code style
+      run: phpcs src/ tests/
 
     - name: Static analysis
-      run: phpstan
+      run: phpstan analyze src/ tests/
 
-    - name: Run test suite
-      run: phpunit
+    - name: Run tests
+      run: ./vendor/bin/phpunit tests/
