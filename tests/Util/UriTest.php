@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codeception\Util;
+namespace Tests\Codeception\Util;
 
+use Codeception\Util\Uri;
 use PHPUnit\Framework\TestCase;
 
 class UriTest extends TestCase

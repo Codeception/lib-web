@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
+namespace Tests\Codeception\Util;
+
 use Codeception\Util\Locator;
 use Facebook\WebDriver\WebDriverBy;
 use PHPUnit\Framework\TestCase;
+use SimpleXMLElement;
 
 class LocatorTest extends TestCase
 {
