@@ -13,7 +13,8 @@
     ],
     "homepage": "https://codeception.com/",
     "require": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "phpunit/phpunit": "^9.5 | ^10.0"
     },
     "conflict": {
         "codeception/codeception": "<5.0.0-alpha3"
