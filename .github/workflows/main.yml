@@ -30,7 +30,7 @@ jobs:
       run: phpcs src/ tests/
 
     - name: Static analysis
-      run: phpstan analyze src/ tests/
+      run: phpstan analyze --level=5 src/ tests/
 
     - name: Run tests
       run: ./vendor/bin/phpunit tests/

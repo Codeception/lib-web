@@ -2,8 +2,6 @@
 
 namespace Codeception\Lib\Interfaces;
 
-use Symfony\Component\DomCrawler\Crawler;
-
 interface ElementLocator
 {
     /**
@@ -27,7 +25,6 @@ interface ElementLocator
      * WebDriver module returns `Facebook\WebDriver\Remote\RemoteWebElement` instances
      * PhpBrowser and Framework modules return `Symfony\Component\DomCrawler\Crawler` instances
      *
-     * @return Crawler|array of interactive elements
      * @api
      */
     public function _findElements(mixed $locator): iterable;
