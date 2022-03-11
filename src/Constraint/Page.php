@@ -82,6 +82,6 @@ class Page extends Constraint
         if (!$this->uri) {
             return '';
         }
-        return " {$onPage} {$this->uri}";
+        return "{$onPage} {$this->uri}";
     }
 }
