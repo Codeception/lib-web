@@ -6,7 +6,7 @@ namespace Codeception\Exception;
 
 use function ucfirst;
 
-class MalformedLocatorException extends TestRuntimeException
+class MalformedLocatorException extends \RuntimeException
 {
     public function __construct(string $locator, string $type = 'CSS or XPath')
     {

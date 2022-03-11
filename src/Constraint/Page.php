@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Codeception\Constraint;
 
-use Codeception\Lib\Console\Message;
 use PHPUnit\Framework\Constraint\Constraint;
 
-use function codecept_output_dir;
 use function mb_stripos;
 use function mb_strlen;
 use function mb_substr;
@@ -69,25 +67,21 @@ class Page extends Constraint
     protected function failureDescription($pageContent): string
     {
         $message = $this->uriMessage('on page');
-        $message->append("\n--> ");
-        $message->append(mb_substr($pageContent, 0, 300, 'utf-8'));
-        if (mb_strlen($pageContent, 'utf-8') > 300) {
-            $debugMessage = new Message(
-                "[Content too long to display. See complete response in '" . codecept_output_dir() . "' directory]"
-            );
-            $message->append("\n")->append($debugMessage);
+        $message .= "\n--> ";
+        $message .= mb_substr($pageContent, 0, 300, 'utf-8');
+        if (mb_strlen($pageContent, 'utf-8') > 300 && function_exists('codecept_output_dir')) {
+            $message .= "\n[Content too long to display. See complete response in '"
+                . codecept_output_dir() . "' directory]";
         }
-        $message->append("\n--> ");
-        return $message->getMessage() . $this->toString();
+
+        return $message . "\n--> " . $this->toString();
     }
 
-    protected function uriMessage(string $onPage = ''): Message
+    protected function uriMessage(string $onPage = ''): string
     {
         if (!$this->uri) {
-            return new Message('');
+            return '';
         }
-        $message = new Message($this->uri);
-        $message->prepend(" {$onPage} ");
-        return $message;
+        return " {$onPage} {$this->uri}";
     }
 }
