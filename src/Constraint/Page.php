@@ -16,14 +16,9 @@ use function trim;
 
 class Page extends Constraint
 {
-    /**
-     * @var string
-     */
-    protected $uri;
-    /**
-     * @var string
-     */
-    protected $string;
+    protected string $uri;
+
+    protected string $string;
 
     public function __construct(string $string, string $uri = '')
     {
