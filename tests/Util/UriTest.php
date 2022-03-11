@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Codeception\Util;
 
-class UriTest extends \Codeception\Test\Unit
+use PHPUnit\Framework\TestCase;
+
+class UriTest extends TestCase
 {
     public function testUrlMerge()
     {

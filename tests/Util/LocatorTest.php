@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 use Codeception\Util\Locator;
 use Facebook\WebDriver\WebDriverBy;
+use PHPUnit\Framework\TestCase;
 
-class LocatorTest extends \PHPUnit\Framework\TestCase
+class LocatorTest extends TestCase
 {
     public function testCombine()
     {
@@ -88,8 +89,10 @@ class LocatorTest extends \PHPUnit\Framework\TestCase
     {
         $this->assertSame("'string selector'", Locator::humanReadableString("string selector"));
         $this->assertSame("css '.something'", Locator::humanReadableString(['css' => '.something']));
-        //WebDriver is no longer a dependency of core, so this can't be testedI
-        //$this->assertSame("css selector '.something'", Locator::humanReadableString(WebDriverBy::cssSelector('.something')) );
+        $this->assertSame(
+            "css selector '.something'",
+            Locator::humanReadableString(WebDriverBy::cssSelector('.something'))
+        );
     }
 
     public function testLocatingElementPosition()
