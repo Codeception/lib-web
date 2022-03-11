@@ -618,7 +618,6 @@ interface Web
      * $I->fillField("//input[@type='text']", "Hello World!");
      * $I->fillField(['name' => 'email'], 'jon@example.com');
      * ```
-     * @param string|array $field
      */
     public function fillField($field, $value): void;
 
