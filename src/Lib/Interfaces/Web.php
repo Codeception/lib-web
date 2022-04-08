@@ -433,7 +433,7 @@ interface Web
      * $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user didn't check the first checkbox in form.
      * ```
      */
-    public function dontSeeCheckboxIsChecked(string $checkbox): void;
+    public function dontSeeCheckboxIsChecked($checkbox): void;
 
     /**
      * Checks that the given input field or textarea *equals* (i.e. not just contains) the given value.
