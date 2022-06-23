@@ -37,7 +37,7 @@ class UriTest extends TestCase
     {
         $this->assertSame(
             'https://google.com/account/',
-            Uri::mergeUrls('http://google.com/', 'https://google.com/account/')
+            Uri::mergeUrls('https://google.com/', 'https://google.com/account/')
         );
         $this->assertSame('https://facebook.com/', Uri::mergeUrls('https://google.com/test/', '//facebook.com/'));
         $this->assertSame(
