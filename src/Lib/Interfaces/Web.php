@@ -661,8 +661,8 @@ interface Web
     public function grabValueFrom($field): mixed;
 
     /**
-     * Grabs the value of the given attribute value from the given element.
-     * Fails if element is not found.
+     * Returns the value of the given attribute value from the given HTML element. For some attributes, the string `true` is returned instead of their literal value (e.g. `disabled="disabled"` or `required="required"`).
+     * Fails if the element is not found. Returns `null` if the attribute is not present on the element.
      *
      * ```php
      * <?php
