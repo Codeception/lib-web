@@ -27,5 +27,5 @@ interface PageSourceSaver
      * // saved to: tests/_output/debug/2017-05-26_14-24-11_4b3403665fea6.html
      * ```
      */
-    public function makeHtmlSnapshot(string $name = null): void;
+    public function makeHtmlSnapshot(?string $name = null): void;
 }

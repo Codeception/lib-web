@@ -275,7 +275,7 @@ interface Web
      * ]);
      * ```
      */
-    public function submitForm($selector, array $params, string $button = null): void;
+    public function submitForm($selector, array $params, ?string $button = null): void;
 
     /**
      * Perform a click on a link or a button, given by a locator.
@@ -317,7 +317,7 @@ interface Web
      * $I->seeLink('Logout','/logout'); // matches <a href="/logout">Logout</a>
      * ```
      */
-    public function seeLink(string $text, string $url = null): void;
+    public function seeLink(string $text, ?string $url = null): void;
 
     /**
      * Checks that the page doesn't contain a link with the given string.
@@ -410,7 +410,7 @@ interface Web
      * $uri = $I->grabFromCurrentUrl();
      * ```
      */
-    public function grabFromCurrentUrl(string $uri = null): mixed;
+    public function grabFromCurrentUrl(?string $uri = null): mixed;
 
     /**
      * Checks that the specified checkbox is checked.
@@ -692,7 +692,7 @@ interface Web
      *
      * @return string[]
      */
-    public function grabMultiple($cssOrXpath, string $attribute = null): array;
+    public function grabMultiple($cssOrXpath, ?string $attribute = null): array;
 
     /**
      * Checks that the given element exists on the page and is visible.
