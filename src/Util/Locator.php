@@ -338,11 +338,9 @@ class Locator
             $locator = $selector[$type];
             return "{$type} '{$locator}'";
         }
-        if (class_exists('\Facebook\WebDriver\WebDriverBy') && $selector instanceof WebDriverBy) {
-            $type = $selector->getMechanism();
-            $locator = $selector->getValue();
-            return "{$type} '{$locator}'";
-        }
-        throw new InvalidArgumentException("Unrecognized selector");
+
+        $type = $selector->getMechanism();
+        $locator = $selector->getValue();
+        return "{$type} '{$locator}'";
     }
 }
