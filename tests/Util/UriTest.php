@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Codeception\Util;
 
 use Codeception\Util\Uri;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class UriTest extends TestCase
@@ -124,5 +125,62 @@ class UriTest extends TestCase
             'https://codeception.com/test',
             Uri::mergeUrls('https://codeception.com/', 'test')
         );
+    }
+
+    #[DataProvider('phpUrlPartsProvider')]
+    public function testPhpUrlPartsToString(array $parts, string $expected): void
+    {
+        $this->assertSame($expected, Uri::phpUrlPartsToString($parts));
+    }
+
+    public static function phpUrlPartsProvider(): iterable
+    {
+        yield [
+            [
+                'path' => '/test',
+            ],
+            '/test'
+        ];
+
+        yield [
+            [
+                'query' => 'test=a',
+            ],
+            '?test=a'
+        ];
+
+        yield [
+            [
+                'scheme' => 'https',
+                'host' => 'codeception.com',
+                'path' => '/test',
+            ],
+            'https://codeception.com/test'
+        ];
+
+        yield [
+            [
+                'scheme' => 'https',
+                'host' => 'codeception.com',
+            ],
+            'https://codeception.com'
+        ];
+
+        yield [
+            [
+                'scheme' => 'https',
+                'host' => 'codeception.com',
+            ],
+            'https://codeception.com'
+        ];
+
+        yield [
+            [
+                'scheme' => 'https',
+                'host' => 'codeception.com',
+                'port' => 8080,
+            ],
+            'https://codeception.com:8080'
+        ];
     }
 }
