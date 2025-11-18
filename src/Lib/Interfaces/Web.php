@@ -345,30 +345,28 @@ interface Web
     public function seeInCurrentUrl(string $uri): void;
 
     /**
-     * Checks that the current URL is equal to the given string.
-     * Unlike `seeInCurrentUrl`, this only matches the full URL.
+     * Checks that the current URL (path) is equal to the given string.
      *
      * ```php
      * <?php
-     * // to match root url
+     * // to match the home page
      * $I->seeCurrentUrlEquals('/');
      * ```
      */
     public function seeCurrentUrlEquals(string $uri): void;
 
     /**
-     * Checks that the current URL matches the given regular expression.
+     * Checks that the current URL (path) matches the given regular expression.
      *
      * ```php
      * <?php
-     * // to match root url
-     * $I->seeCurrentUrlMatches('~^/users/(\d+)~');
+     * $I->seeCurrentUrlMatches('~^/users/\d+$~');
      * ```
      */
     public function seeCurrentUrlMatches(string $uri): void;
 
     /**
-     * Checks that the current URI doesn't contain the given string.
+     * Checks that the current URI (path) doesn't contain the given string.
      *
      * ```php
      * <?php
@@ -378,7 +376,7 @@ interface Web
     public function dontSeeInCurrentUrl(string $uri): void;
 
     /**
-     * Checks that the current URL doesn't equal the given string.
+     * Checks that the current URL (path) doesn't equal the given string.
      * Unlike `dontSeeInCurrentUrl`, this only matches the full URL.
      *
      * ```php
@@ -390,12 +388,12 @@ interface Web
     public function dontSeeCurrentUrlEquals(string $uri): void;
 
     /**
-     * Checks that current url doesn't match the given regular expression.
+     * Checks that current URL (path) doesn't match the given regular expression.
      *
      * ```php
      * <?php
      * // to match root url
-     * $I->dontSeeCurrentUrlMatches('~^/users/(\d+)~');
+     * $I->dontSeeCurrentUrlMatches('~^/users/\d+$~');
      * ```
      */
     public function dontSeeCurrentUrlMatches(string $uri): void;
