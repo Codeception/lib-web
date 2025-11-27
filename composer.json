@@ -17,7 +17,7 @@
         "ext-mbstring": "*",
         "guzzlehttp/psr7": "^2.0",
         "phpunit/phpunit": "^11.5 | ^12",
-        "symfony/css-selector": ">=4.4.24 <8.0"
+        "symfony/css-selector": ">=4.4.24 <9.0"
     },
     "require-dev": {
         "php-webdriver/webdriver": "^1.12"
