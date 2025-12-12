@@ -38,7 +38,7 @@ class Locator
      *
      * ```php
      * <?php
-     * use \Codeception\Util\Locator;
+     * use Codeception\Util\Locator;
      *
      * $I->see('Title', Locator::combine('h1','h2','h3'));
      * ```
@@ -48,7 +48,7 @@ class Locator
      *
      * ```php
      * <?php
-     * use \Codeception\Util\Locator;
+     * use Codeception\Util\Locator;
      *
      * $I->fillField(Locator::combine('form input[type=text]','//form/textarea[2]'), 'qwerty');
      * ```
@@ -75,7 +75,7 @@ class Locator
      *
      * ```php
      * <?php
-     * use \Codeception\Util\Locator;
+     * use Codeception\Util\Locator;
      *
      * $I->see('Log In', Locator::href('/login.php'));
      * ```
@@ -93,7 +93,7 @@ class Locator
      * You could try to match elements by their tab position using `tabIndex` method of `Locator` class.
      * ```php
      * <?php
-     * use \Codeception\Util\Locator;
+     * use Codeception\Util\Locator;
      *
      * $I->fillField(Locator::tabIndex(1), 'davert');
      * $I->fillField(Locator::tabIndex(2) , 'qwerty');
@@ -138,7 +138,7 @@ class Locator
      *
      * ```php
      * <?php
-     * use \Codeception\Util\Locator;
+     * use Codeception\Util\Locator;
      *
      * $I->seeElement(Locator::find('img', ['title' => 'diagram']));
      * ```
